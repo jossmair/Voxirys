@@ -15,6 +15,8 @@
   ·
   <a href="https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta">Release v0.1 beta</a>
   ·
+  <a href="docs/INSTALLATION.md">Installation</a>
+  ·
   <a href="mailto:contact@voxirys.fr">Contact</a>
 </p>
 
@@ -26,6 +28,12 @@
 
 ![Interface Voxirys](assets/voxirys-home.png)
 
+## Présentation
+
+**Voxirys** est un assistant vocal Windows conçu pour travailler localement sur l'ordinateur. Il permet de dicter du texte, exécuter des commandes vocales et contrôler la souris à la voix, avec une priorité forte : ne pas envoyer la voix ou les textes dictés sur internet.
+
+Le dépôt public sert à distribuer les versions beta, présenter le logiciel et centraliser les informations utiles aux testeurs. Le code source privé n'est pas publié ici.
+
 ## Téléchargements
 
 | Edition | Usage | Lien |
@@ -35,11 +43,18 @@
 
 Release publique : [Voxirys 0.1 beta](https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta)
 
-## Pourquoi Voxirys
+Checksums SHA-256 : [CHECKSUMS.txt](CHECKSUMS.txt)
 
-Voxirys aide à utiliser Windows par la voix, sans dépendre d'un service distant pour traiter la dictée ou les commandes. L'objectif est simple : rendre l'ordinateur plus accessible, plus rapide et plus confortable, tout en gardant les données sensibles sur la machine.
+## Points forts
 
-## Confidentialité
+| Atout | Ce que cela apporte |
+| --- | --- |
+| **Local par conception** | Le traitement reste sur le PC Windows. |
+| **Confidentialité renforcée** | La voix et les textes dictés ne partent pas vers un service externe. |
+| **Contrôle Windows à la voix** | Dictée, commandes et souris vocale dans un même outil. |
+| **Portable disponible** | Tester Voxirys sans installation lourde. |
+
+## Confidentialité locale
 
 | Engagement | Détail |
 | --- | --- |
@@ -70,9 +85,23 @@ Voxirys aide à utiliser Windows par la voix, sans dépendre d'un service distan
 3. Lancer Voxirys sur Windows 10 ou Windows 11.
 4. Tester la dictée, les commandes vocales et la souris à la voix.
 
+Guide détaillé : [docs/INSTALLATION.md](docs/INSTALLATION.md)
+
 ## Statut du projet
 
 Voxirys est actuellement en **version 0.1 beta**. Certaines fonctions peuvent évoluer pendant les prochaines mises à jour.
+
+## Ressources
+
+| Ressource | Lien |
+| --- | --- |
+| Site officiel | [voxirys.fr](https://voxirys.fr/) |
+| Release actuelle | [v0.1-beta](https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta) |
+| Installation | [docs/INSTALLATION.md](docs/INSTALLATION.md) |
+| Confidentialité | [docs/CONFIDENTIALITE.md](docs/CONFIDENTIALITE.md) |
+| Notes de version | [docs/RELEASE_NOTES.md](docs/RELEASE_NOTES.md) |
+
+## Contenu du dépôt
 
 Ce dépôt public contient uniquement :
 
