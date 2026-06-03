@@ -696,6 +696,14 @@
       text-decoration: none;
     }
     .contact-direct a:hover { text-decoration: underline; }
+    .hidden-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
 
     footer {
       padding: 30px 0 44px;
@@ -879,7 +887,7 @@
             <div class="actions">
               <a class="btn primary" href="https://github.com/jossmair/Voxirys/releases/download/v0.1-beta/Voxirys-Setup-0.1-beta-20260603_104635.exe">Télécharger Voxirys</a>
               <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip">Version portable</a>
-              <a class="btn secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=voxirys@gmail.com&su=Voxirys" target="_blank" rel="noopener">Contacter Voxirys</a>
+              <a class="btn secondary" href="#contact">Contacter Voxirys</a>
             </div>
             <div class="download-note">
               <span>Windows 10/11.</span>
@@ -911,7 +919,12 @@
             <h2>Contact.</h2>
             <p>Installation, retour bêta ou usage professionnel. Indiquez le contexte pour que la réponse soit plus précise.</p>
           </div>
-          <form class="contact-form" action="https://mail.google.com/mail/" method="get">
+          <form class="contact-form" action="https://formsubmit.co/voxirys@gmail.com" method="post">
+            <input type="hidden" name="_subject" value="Voxirys - Nouveau message">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://voxirys.fr/#contact">
+            <input type="text" name="_honey" class="hidden-field" tabindex="-1" autocomplete="off">
             <div class="field">
               <label for="profile">Profil</label>
               <select id="profile" name="Profil" required>
@@ -931,7 +944,7 @@
               <textarea id="message" name="Message" placeholder="Votre besoin, votre contexte ou votre retour bêta." required></textarea>
             </div>
             <button class="btn secondary" type="submit">Envoyer</button>
-            <p class="contact-direct">Contact direct : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voxirys@gmail.com&su=Voxirys" target="_blank" rel="noopener">voxirys@gmail.com</a></p>
+            <p class="contact-direct">Les messages sont envoyés à <a href="mailto:voxirys@gmail.com">voxirys@gmail.com</a>.</p>
           </form>
         </div>
       </div>
@@ -944,33 +957,6 @@
       <p>© 2026 Voxirys.</p>
     </div>
   </footer>
-  <script>
-    const contactForm = document.querySelector(".contact-form");
-
-    if (contactForm) {
-      contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const profile = document.querySelector("#profile")?.value.trim() || "Non précisé";
-        const email = document.querySelector("#email")?.value.trim() || "Non précisé";
-        const message = document.querySelector("#message")?.value.trim() || "";
-        const gmailUrl = new URL("https://mail.google.com/mail/");
-        gmailUrl.searchParams.set("view", "cm");
-        gmailUrl.searchParams.set("fs", "1");
-        gmailUrl.searchParams.set("to", "voxirys@gmail.com");
-        gmailUrl.searchParams.set("su", `Voxirys - ${profile}`);
-        gmailUrl.searchParams.set("body", [
-          `Profil : ${profile}`,
-          `Email : ${email}`,
-          "",
-          "Message :",
-          message
-        ].join("\n"));
-
-        window.open(gmailUrl.toString(), "_blank", "noopener");
-      });
-    }
-  </script>
 </body>
 </html>
 
