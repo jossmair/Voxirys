@@ -685,6 +685,17 @@
       margin-top: 4px;
       cursor: pointer;
     }
+    .contact-direct {
+      margin: 2px 0 0;
+      color: rgba(247,251,255,.58);
+      font-size: 14px;
+    }
+    .contact-direct a {
+      color: var(--cyan);
+      font-weight: 850;
+      text-decoration: none;
+    }
+    .contact-direct a:hover { text-decoration: underline; }
 
     footer {
       padding: 30px 0 44px;
@@ -868,7 +879,7 @@
             <div class="actions">
               <a class="btn primary" href="https://github.com/jossmair/Voxirys/releases/download/v0.1-beta/Voxirys-Setup-0.1-beta-20260603_104635.exe">Télécharger Voxirys</a>
               <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip">Version portable</a>
-              <a class="btn secondary" href="mailto:voxirys@gmail.com?subject=Voxirys">Contacter Voxirys</a>
+              <a class="btn secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=voxirys@gmail.com&su=Voxirys" target="_blank" rel="noopener">Contacter Voxirys</a>
             </div>
             <div class="download-note">
               <span>Windows 10/11.</span>
@@ -900,7 +911,7 @@
             <h2>Contact.</h2>
             <p>Installation, retour bêta ou usage professionnel. Indiquez le contexte pour que la réponse soit plus précise.</p>
           </div>
-          <form class="contact-form" action="mailto:voxirys@gmail.com?subject=Voxirys" method="post" enctype="text/plain">
+          <form class="contact-form" action="https://mail.google.com/mail/" method="get">
             <div class="field">
               <label for="profile">Profil</label>
               <select id="profile" name="Profil" required>
@@ -920,6 +931,7 @@
               <textarea id="message" name="Message" placeholder="Votre besoin, votre contexte ou votre retour bêta." required></textarea>
             </div>
             <button class="btn secondary" type="submit">Envoyer</button>
+            <p class="contact-direct">Contact direct : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voxirys@gmail.com&su=Voxirys" target="_blank" rel="noopener">voxirys@gmail.com</a></p>
           </form>
         </div>
       </div>
@@ -942,8 +954,12 @@
         const profile = document.querySelector("#profile")?.value.trim() || "Non précisé";
         const email = document.querySelector("#email")?.value.trim() || "Non précisé";
         const message = document.querySelector("#message")?.value.trim() || "";
-        const subject = encodeURIComponent(`Voxirys - ${profile}`);
-        const body = encodeURIComponent([
+        const gmailUrl = new URL("https://mail.google.com/mail/");
+        gmailUrl.searchParams.set("view", "cm");
+        gmailUrl.searchParams.set("fs", "1");
+        gmailUrl.searchParams.set("to", "voxirys@gmail.com");
+        gmailUrl.searchParams.set("su", `Voxirys - ${profile}`);
+        gmailUrl.searchParams.set("body", [
           `Profil : ${profile}`,
           `Email : ${email}`,
           "",
@@ -951,7 +967,7 @@
           message
         ].join("\n"));
 
-        window.location.href = `mailto:voxirys@gmail.com?subject=${subject}&body=${body}`;
+        window.open(gmailUrl.toString(), "_blank", "noopener");
       });
     }
   </script>
