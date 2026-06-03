@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/voxirys-launcher.png" alt="Voxirys" width="96" height="96">
 </p>
 
@@ -17,7 +17,7 @@
   ·
   <a href="docs/INSTALLATION.md">Installation</a>
   ·
-  <a href="mailto:contact@voxirys.fr">Contact</a>
+  <a href="mailto:voxirys@gmail.com">Contact</a>
 </p>
 
 <p align="center">
@@ -115,4 +115,5 @@ Le code source privé de Voxirys n'est pas publié ici.
 
 Pour une question, un retour beta ou un usage professionnel :
 
-**contact@voxirys.fr**
+**voxirys@gmail.com**
+
