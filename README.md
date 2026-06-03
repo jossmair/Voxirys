@@ -1,46 +1,89 @@
-﻿# Voxirys
+<p align="center">
+  <img src="assets/voxirys-launcher.png" alt="Voxirys" width="96" height="96">
+</p>
 
-![Voxirys](assets/voxirys-home.png)
+<h1 align="center">Voxirys</h1>
 
-**Voxirys** est un assistant vocal local pour Windows. Il permet de dicter du texte, lancer des commandes vocales et contrôler la souris à la voix, avec une priorité claire : garder les données sur l'ordinateur.
+<p align="center">
+  Assistant vocal local et sécurisé pour Windows.
+  <br>
+  Dictée, commandes vocales et contrôle de la souris à la voix.
+</p>
 
-## Télécharger
+<p align="center">
+  <a href="https://voxirys.fr/">Site officiel</a>
+  ·
+  <a href="https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta">Release v0.1 beta</a>
+  ·
+  <a href="mailto:contact@voxirys.fr">Contact</a>
+</p>
 
-| Version | Fichier | Lien |
+<p align="center">
+  <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white">
+  <img alt="Beta" src="https://img.shields.io/badge/version-0.1%20beta-66e6ff?style=for-the-badge">
+  <img alt="Local" src="https://img.shields.io/badge/traitement-local-73f1b5?style=for-the-badge">
+</p>
+
+![Interface Voxirys](assets/voxirys-home.png)
+
+## Téléchargements
+
+| Edition | Usage | Lien |
 | --- | --- | --- |
-| Portable Windows | `Voxirys-Portable-0.1.zip` | [Télécharger la version portable](https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip) |
-| Installateur Windows | `Voxirys-Setup-0.1-beta-20260603_104635.exe` | [Télécharger le setup](https://github.com/jossmair/Voxirys/releases/download/v0.1-beta/Voxirys-Setup-0.1-beta-20260603_104635.exe) |
+| **Portable Windows** | Lancer Voxirys sans installation classique | [Télécharger `Voxirys-Portable-0.1.zip`](https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip) |
+| **Setup Windows** | Installation Windows standard | [Télécharger le setup depuis la release](https://github.com/jossmair/Voxirys/releases/download/v0.1-beta/Voxirys-Setup-0.1-beta-20260603_104635.exe) |
 
-La release publique est disponible ici : [Voxirys 0.1 beta](https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta).
+Release publique : [Voxirys 0.1 beta](https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta)
 
-## Points clés
+## Pourquoi Voxirys
 
-- **Traitement local** : Voxirys fonctionne sur le PC Windows.
-- **Aucune donnée envoyée sur internet** : la voix et les textes dictés ne partent pas vers un service externe.
-- **Dictée vocale** : dicter une phrase et l'insérer dans le travail en cours.
-- **Commandes vocales** : déclencher des actions simples sans quitter Windows.
-- **Souris à la voix** : déplacer, cliquer et interagir avec l'ordinateur par commandes vocales.
-
-## Publics concernés
-
-Voxirys est pensé pour les personnes qui veulent rendre l'ordinateur plus accessible, plus rapide ou plus confortable : personnes handicapées, enseignants, professionnels médicaux, usages professionnels ou personnels.
-
-## Site web
-
-Le site de présentation est publié avec GitHub Pages : [voxirys.fr](https://voxirys.fr/)
+Voxirys aide à utiliser Windows par la voix, sans dépendre d'un service distant pour traiter la dictée ou les commandes. L'objectif est simple : rendre l'ordinateur plus accessible, plus rapide et plus confortable, tout en gardant les données sensibles sur la machine.
 
 ## Confidentialité
 
-Voxirys est conçu autour d'une approche locale. L'objectif est de limiter l'exposition des données sensibles en évitant l'envoi de la voix ou des textes dictés sur internet.
+| Engagement | Détail |
+| --- | --- |
+| **Traitement local** | Voxirys fonctionne directement sur le PC Windows. |
+| **Aucun envoi internet** | La voix et les textes dictés ne partent pas vers un service externe. |
+| **Contexte sensible** | L'approche locale limite l'exposition des données personnelles ou professionnelles. |
 
-## Statut
+## Fonctions principales
 
-Version actuelle : **0.1 beta**. Le logiciel est en développement, certaines fonctions peuvent évoluer pendant les prochaines mises à jour.
+| Fonction | Description |
+| --- | --- |
+| **Dictée vocale** | Dicter du texte et l'insérer dans le travail en cours. |
+| **Commandes vocales** | Déclencher des actions simples sans quitter le contexte Windows. |
+| **Souris à la voix** | Déplacer, cliquer et interagir avec l'ordinateur par commandes vocales. |
+| **Version portable** | Tester Voxirys sans installation lourde. |
+
+## Publics concernés
+
+- Personnes qui veulent réduire l'usage du clavier ou de la souris.
+- Enseignants et formateurs qui veulent dicter ou piloter certaines actions rapidement.
+- Professionnels médicaux ou administratifs avec des tâches de saisie répétitives.
+- Utilisateurs Windows qui veulent tester une commande vocale locale.
+
+## Installation rapide
+
+1. Télécharger la version portable ou le setup.
+2. Extraire l'archive portable si vous choisissez le ZIP.
+3. Lancer Voxirys sur Windows 10 ou Windows 11.
+4. Tester la dictée, les commandes vocales et la souris à la voix.
+
+## Statut du projet
+
+Voxirys est actuellement en **version 0.1 beta**. Certaines fonctions peuvent évoluer pendant les prochaines mises à jour.
+
+Ce dépôt public contient uniquement :
+
+- la présentation du produit ;
+- les binaires publics ;
+- les assets publics de la page GitHub.
+
+Le code source privé de Voxirys n'est pas publié ici.
 
 ## Contact
 
-Pour une question, un retour beta ou un usage professionnel : [contact@voxirys.fr](mailto:contact@voxirys.fr)
+Pour une question, un retour beta ou un usage professionnel :
 
----
-
-Ce dépôt public contient uniquement la page de présentation et les binaires publics. Le code source privé de Voxirys n'est pas publié ici.
+**contact@voxirys.fr**
