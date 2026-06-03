@@ -1,31 +1,32 @@
-# Notes de version
+﻿# Notes de version
 
 ## Voxirys 0.1 beta
 
-Première beta publique de Voxirys pour Windows.
+PremiÃ¨re beta publique de Voxirys pour Windows.
 
-### Téléchargements
+### TÃ©lÃ©chargements
 
 - Portable Windows : `Voxirys-Portable-0.1.zip`
-- Setup Windows : `Voxirys-Setup-0.1-beta-20260603_104635.exe`
+- Setup Windows : `Voxirys-Setup-0.1-beta-20260603_162250.exe`
 
 ### Fonctions incluses
 
-- Dictée vocale.
+- DictÃ©e vocale.
 - Commandes vocales Windows.
-- Gestion de la souris à la voix.
+- Gestion de la souris Ã  la voix.
 - Fonctionnement local sur l'ordinateur.
 
-### Confidentialité
+### ConfidentialitÃ©
 
-- Aucune donnée vocale ou texte dicté envoyé sur internet.
+- Aucune donnÃ©e vocale ou texte dictÃ© envoyÃ© sur internet.
 - Traitement local sur Windows.
 
-### Compatibilité
+### CompatibilitÃ©
 
 - Windows 10
 - Windows 11
 
 ### Statut
 
-Version beta en développement. Certaines fonctions peuvent évoluer pendant les prochaines mises à jour.
+Version beta en dÃ©veloppement. Certaines fonctions peuvent Ã©voluer pendant les prochaines mises Ã  jour.
+

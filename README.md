@@ -39,7 +39,7 @@ Le dépôt public sert à distribuer les versions beta, présenter le logiciel e
 | Edition | Usage | Lien |
 | --- | --- | --- |
 | **Portable Windows** | Lancer Voxirys sans installation classique | [Télécharger `Voxirys-Portable-0.1.zip`](https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip) |
-| **Setup Windows** | Installation Windows standard | [Télécharger le setup depuis la release](https://github.com/jossmair/Voxirys/releases/download/v0.1-beta/Voxirys-Setup-0.1-beta-20260603_104635.exe) |
+| **Setup Windows** | Installation Windows standard | [Télécharger le setup Windows](https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260603_162250.exe) |
 
 Release publique : [Voxirys 0.1 beta](https://github.com/jossmair/Voxirys/releases/tag/v0.1-beta)
 
@@ -116,4 +116,5 @@ Le code source privé de Voxirys n'est pas publié ici.
 Pour une question, un retour beta ou un usage professionnel :
 
 **voxirys@gmail.com**
+
 
