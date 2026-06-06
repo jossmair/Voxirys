@@ -537,30 +537,79 @@
       font-size: 18px;
     }
 
-    .promise {
+    .impact-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 32px;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.15fr) minmax(0, .9fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 38px;
     }
 
-    .promise article {
-      padding: 20px;
-      min-height: 180px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--panel);
+    .impact-card {
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 22px;
+      background: #111;
+      box-shadow: 0 34px 100px rgba(0,0,0,.32);
     }
 
-    .promise strong {
+    .impact-card.featured {
+      min-height: 500px;
+    }
+
+    .impact-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .impact-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .impact-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.76)),
+        linear-gradient(90deg, rgba(5,8,11,.22), transparent);
+    }
+
+    .impact-copy {
+      position: relative;
+      z-index: 1;
+      padding: 26px;
+    }
+
+    .impact-copy small {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--aqua);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .impact-copy strong {
       display: block;
-      font-size: 21px;
-      margin-bottom: 8px;
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.04;
+      margin-bottom: 9px;
     }
 
-    .promise p {
+    .impact-copy p {
+      max-width: 320px;
       margin: 0;
-      color: var(--muted);
+      color: #d9e4eb;
     }
 
     .final {
@@ -617,7 +666,7 @@
       }
 
       .audience-grid,
-      .promise {
+      .impact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -667,6 +716,11 @@
       .quote-band,
       .final {
         padding: 72px 0;
+      }
+
+      .impact-card,
+      .impact-card.featured {
+        min-height: 360px;
       }
 
       .quote p {
@@ -791,14 +845,35 @@
 
     <section class="section wrap">
       <div class="section-head">
-        <span class="eyebrow">Pourquoi ça compte</span>
-        <h2>Pour les longues journées, les gestes répétés, les moments où chaque clic pèse.</h2>
+        <span class="eyebrow">Impact</span>
+        <h2>Moins de gestes. Plus de présence.</h2>
+        <p>Voxirys aide dans les moments où écrire, cliquer ou répéter la même action devient coûteux.</p>
       </div>
-      <div class="promise">
-        <article><strong>Fatigue</strong><p>Réduire les gestes inutiles.</p></article>
-        <article><strong>Temps</strong><p>Aller plus vite dans les tâches répétées.</p></article>
-        <article><strong>Clarté</strong><p>Voir ce que Voxirys fait.</p></article>
-        <article><strong>Privé</strong><p>Garder sa voix chez soi.</p></article>
+      <div class="impact-grid">
+        <article class="impact-card">
+          <img src="assets/impact-long-day.png" alt="Longue journée de travail avec Voxirys">
+          <div class="impact-copy">
+            <small>Fatigue</small>
+            <strong>Souffler un peu.</strong>
+            <p>Moins de gestes répétés quand la journée s'allonge.</p>
+          </div>
+        </article>
+        <article class="impact-card featured">
+          <img src="assets/impact-accessible-flow.png" alt="Commande vocale plus accessible">
+          <div class="impact-copy">
+            <small>Autonomie</small>
+            <strong>Reprendre la main.</strong>
+            <p>La voix devient un accès simple à l'ordinateur.</p>
+          </div>
+        </article>
+        <article class="impact-card">
+          <img src="assets/impact-repetitive-actions.png" alt="Actions répétées simplifiées par la voix">
+          <div class="impact-copy">
+            <small>Rythme</small>
+            <strong>Aller plus vite.</strong>
+            <p>Les actions répétées deviennent plus légères.</p>
+          </div>
+        </article>
       </div>
     </section>
 
