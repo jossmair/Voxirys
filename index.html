@@ -187,9 +187,7 @@
 
     .hero-inner {
       min-height: calc(100vh - 78px);
-      display: grid;
-      grid-template-columns: minmax(0, .88fr) minmax(280px, .62fr);
-      gap: 52px;
+      display: flex;
       align-items: center;
       padding: 54px 0 112px;
       position: relative;
@@ -268,38 +266,6 @@
     .btn.ghost {
       background: rgba(255,255,255,.08);
       backdrop-filter: blur(12px);
-    }
-
-    .hero-card {
-      align-self: end;
-      margin-left: auto;
-      width: min(390px, 100%);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 18px;
-      background: rgba(5,8,11,.58);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 36px 110px rgba(0,0,0,.42);
-      overflow: hidden;
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-    }
-
-    .hero-card div {
-      padding: 18px;
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .hero-card span {
-      color: var(--muted);
     }
 
     .audiences {
@@ -625,6 +591,78 @@
       font-size: 18px;
     }
 
+    .contact {
+      padding: 0 0 110px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(320px, 1.15fr);
+      gap: 38px;
+      align-items: start;
+      padding: 34px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(84,243,223,.09), transparent 38%),
+        rgba(255,255,255,.055);
+      box-shadow: 0 34px 100px rgba(0,0,0,.28);
+    }
+
+    .contact-copy p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 12px;
+      background: rgba(5,8,11,.62);
+      color: var(--ink);
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(84,243,223,.58);
+      box-shadow: 0 0 0 3px rgba(84,243,223,.12);
+    }
+
+    .contact-note {
+      margin: 2px 0 0;
+      color: var(--soft);
+      font-size: 13px;
+    }
+
     footer {
       padding: 28px 20px;
       color: var(--soft);
@@ -652,13 +690,8 @@
         display: none;
       }
 
-      .hero-inner,
       .showcase {
         grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        margin: 0;
       }
 
       .audience-grid,
@@ -671,6 +704,10 @@
       }
 
       .showcase-visual { min-height: 420px; }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
@@ -700,10 +737,6 @@
         width: 100%;
       }
 
-      .hero-card {
-        display: none;
-      }
-
       .audience-card {
         min-height: 330px;
       }
@@ -717,6 +750,18 @@
       .impact-card,
       .impact-card.featured {
         min-height: 360px;
+      }
+
+      .contact {
+        padding-bottom: 72px;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
       }
 
       .quote p {
@@ -764,13 +809,6 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Usage Voxirys">
-        <img src="assets/beta-voice-card.png" alt="Aperçu de Voxirys en bêta">
-        <div>
-          <strong>Bêta Voxirys.</strong>
-          <span>Dicter, ouvrir, cliquer, continuer.</span>
-        </div>
-      </aside>
     </div>
   </header>
 
@@ -877,6 +915,31 @@
       <h2>Voxirys doit donner envie en une image, et convaincre en trois phrases.</h2>
       <p>Une voix. Un ordinateur. Plus d'autonomie. Version bêta.</p>
       <a class="btn primary" href="download.html">Télécharger la bêta</a>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <span class="eyebrow">Contact</span>
+          <h2>Parlez-nous de votre usage.</h2>
+          <p>Handicap, enseignement, santé, fatigue, besoin métier : dites-nous ce que Voxirys doit améliorer pour vous.</p>
+        </div>
+        <form class="contact-form" action="mailto:contact@voxirys.fr" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label>Nom
+              <input name="nom" autocomplete="name" placeholder="Votre nom">
+            </label>
+            <label>Email
+              <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr">
+            </label>
+          </div>
+          <label>Message
+            <textarea name="message" placeholder="Votre besoin, votre contexte, votre question"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Envoyer</button>
+          <p class="contact-note">Le formulaire ouvre votre logiciel mail. Vous pouvez aussi écrire à contact@voxirys.fr.</p>
+        </form>
+      </div>
     </section>
   </main>
 
