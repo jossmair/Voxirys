@@ -58,27 +58,45 @@
     }
 
     .nav {
-      height: 88px;
+      min-height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: relative;
       z-index: 2;
-      gap: 18px;
+      gap: 16px;
+      padding-top: 18px;
+    }
+
+    .nav::before {
+      content: "";
+      position: absolute;
+      inset: 18px 0 auto;
+      height: 64px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.045)),
+        rgba(7,11,15,.56);
+      box-shadow: 0 22px 70px rgba(0,0,0,.28);
+      backdrop-filter: blur(22px);
+      z-index: -1;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 190px;
+      min-width: 220px;
+      min-height: 64px;
+      padding-left: 18px;
     }
 
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 14px 34px rgba(84,243,223,.14);
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.16), 0 12px 32px rgba(84,243,223,.12);
     }
 
     .brand-name {
@@ -87,54 +105,47 @@
     }
 
     .brand-name strong {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1;
     }
 
     .brand-name span {
-      color: var(--soft);
-      font-size: 12px;
+      color: rgba(251,253,255,.58);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
       line-height: 1;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      padding: 0 22px;
-      min-height: 48px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 999px;
-      background: rgba(5,8,11,.34);
-      backdrop-filter: blur(20px);
+      gap: 6px;
+      min-height: 46px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 13px;
+      background: rgba(255,255,255,.055);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .nav-links a {
       position: relative;
-      padding: 15px 0;
-      border-radius: 0;
+      min-width: 102px;
+      padding: 11px 13px;
+      border-radius: 10px;
+      text-align: center;
       transition: background .18s ease, color .18s ease;
     }
 
     .nav-links a:hover {
       color: var(--ink);
-      background: transparent;
+      background: rgba(255,255,255,.09);
     }
 
     .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 9px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--aqua);
-      opacity: 0;
-      transform: scaleX(.4);
-      transition: opacity .18s ease, transform .18s ease;
+      display: none;
     }
 
     .nav-links a:hover::after {
@@ -143,46 +154,53 @@
     }
 
     .nav-cta {
-      min-width: 142px;
-      padding: 12px 18px;
+      min-width: 132px;
+      padding: 12px 17px;
       border: 0;
-      border-radius: 999px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--aqua), #d3fff8);
       color: #071013;
       font-weight: 840;
-      box-shadow: 0 16px 50px rgba(84,243,223,.18);
+      box-shadow: 0 16px 46px rgba(84,243,223,.18);
       text-align: center;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .nav-beta {
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 56px rgba(84,243,223,.24);
+    }
+
+    .nav-status {
       display: inline-flex;
       align-items: center;
       gap: 7px;
       min-width: auto;
       justify-content: center;
-      padding: 8px 11px;
-      border: 1px solid rgba(255,210,140,.22);
-      border-radius: 999px;
-      background: rgba(255,210,140,.075);
-      color: #ffe2b1;
-      font-size: 13px;
-      font-weight: 780;
-      backdrop-filter: blur(18px);
+      padding: 10px 12px;
+      border: 1px solid rgba(84,243,223,.2);
+      border-radius: 12px;
+      background: rgba(84,243,223,.075);
+      color: #c8fff8;
+      font-size: 12px;
+      font-weight: 820;
     }
 
-    .nav-beta::before {
+    .nav-status::before {
       content: "";
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 18px rgba(255,210,140,.8);
+      background: var(--aqua);
+      box-shadow: 0 0 18px rgba(84,243,223,.85);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
+      min-height: 64px;
+      padding-right: 10px;
     }
 
     .hero-inner {
@@ -675,18 +693,25 @@
       .nav-links { display: none; }
 
       .nav {
-        height: 84px;
+        min-height: 86px;
+        padding-top: 12px;
+      }
+
+      .nav::before {
+        inset: 12px 0 auto;
+        height: 62px;
       }
 
       .brand {
         min-width: auto;
+        padding-left: 14px;
       }
 
       .brand-name span {
         display: none;
       }
 
-      .nav-beta {
+      .nav-status {
         display: none;
       }
 
@@ -712,6 +737,15 @@
 
     @media (max-width: 640px) {
       .wrap { width: min(100% - 30px, 1180px); }
+
+      .nav::before {
+        border-radius: 15px;
+      }
+
+      .nav-cta {
+        min-width: auto;
+        padding: 11px 13px;
+      }
 
       .hero {
         min-height: auto;
@@ -784,16 +818,16 @@
         <img src="product_assets/voxirys_launcher.png" alt="">
         <span class="brand-name">
           <strong>Voxirys</strong>
-          <span>Voice access</span>
+          <span>Assistant vocal</span>
         </span>
       </a>
       <div class="nav-links">
-        <a href="#publics">Autonomie</a>
-        <a href="#produit">Expérience</a>
+        <a href="#publics">Usages</a>
+        <a href="#produit">Produit</a>
         <a href="#confiance">Impact</a>
       </div>
       <div class="nav-actions">
-        <span class="nav-beta">Bêta</span>
+        <span class="nav-status">Local</span>
         <a class="nav-cta" href="download.html">Télécharger</a>
       </div>
     </nav>
