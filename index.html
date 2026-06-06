@@ -58,7 +58,7 @@
     }
 
     .nav {
-      height: 92px;
+      height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,20 +70,15 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
-      min-width: 210px;
-      padding: 10px 13px 10px 10px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 999px;
-      background: rgba(255,255,255,.055);
-      backdrop-filter: blur(18px);
+      gap: 12px;
+      min-width: 190px;
     }
 
     .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.18);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 14px 34px rgba(84,243,223,.14);
     }
 
     .brand-name {
@@ -92,63 +87,64 @@
     }
 
     .brand-name strong {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 1;
     }
 
     .brand-name span {
       color: var(--soft);
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px;
+      gap: 28px;
+      padding: 0 22px;
+      min-height: 48px;
       border: 1px solid rgba(255,255,255,.12);
       border-radius: 999px;
-      background: rgba(5,8,11,.42);
-      backdrop-filter: blur(18px);
+      background: rgba(5,8,11,.34);
+      backdrop-filter: blur(20px);
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .nav-links a {
-      display: grid;
-      gap: 1px;
-      min-width: 112px;
-      padding: 9px 14px;
-      border-radius: 18px;
+      position: relative;
+      padding: 15px 0;
+      border-radius: 0;
       transition: background .18s ease, color .18s ease;
-    }
-
-    .nav-links strong {
-      color: var(--ink);
-      font-size: 13px;
-      line-height: 1.1;
-    }
-
-    .nav-links span {
-      color: var(--soft);
-      font-size: 11px;
-      line-height: 1.1;
     }
 
     .nav-links a:hover {
       color: var(--ink);
-      background: rgba(255,255,255,.085);
+      background: transparent;
     }
 
-    .nav-links a:first-child {
-      background: rgba(84,243,223,.12);
-      box-shadow: inset 0 0 0 1px rgba(84,243,223,.18);
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 9px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--aqua);
+      opacity: 0;
+      transform: scaleX(.4);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .nav-links a:hover::after {
+      opacity: 1;
+      transform: scaleX(1);
     }
 
     .nav-cta {
-      min-width: 150px;
-      padding: 12px 17px;
+      min-width: 142px;
+      padding: 12px 18px;
       border: 0;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--aqua), #d3fff8);
@@ -162,12 +158,12 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      min-width: 112px;
+      min-width: auto;
       justify-content: center;
-      padding: 10px 13px;
-      border: 1px solid rgba(255,210,140,.28);
+      padding: 8px 11px;
+      border: 1px solid rgba(255,210,140,.22);
       border-radius: 999px;
-      background: rgba(255,210,140,.1);
+      background: rgba(255,210,140,.075);
       color: #ffe2b1;
       font-size: 13px;
       font-weight: 780;
@@ -186,7 +182,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .hero-inner {
@@ -747,9 +743,9 @@
         </span>
       </a>
       <div class="nav-links">
-        <a href="#publics"><strong>Autonomie</strong><span>moins d'effort</span></a>
-        <a href="#produit"><strong>Métiers</strong><span>école, santé</span></a>
-        <a href="#confiance"><strong>Démo</strong><span>voix en action</span></a>
+        <a href="#publics">Autonomie</a>
+        <a href="#produit">Expérience</a>
+        <a href="#confiance">Impact</a>
       </div>
       <div class="nav-actions">
         <span class="nav-beta">Bêta</span>
