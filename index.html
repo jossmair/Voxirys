@@ -495,6 +495,267 @@
       color: var(--muted);
     }
 
+    .live-demo {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(360px, 1.14fr);
+      gap: 44px;
+      align-items: center;
+      padding-top: 18px;
+    }
+
+    .live-demo-copy p {
+      max-width: 500px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .demo-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 74% 18%, rgba(84,243,223,.17), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.035)),
+        #081017;
+      box-shadow: 0 42px 120px rgba(0,0,0,.36);
+    }
+
+    .demo-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: .24;
+      mask-image: linear-gradient(180deg, black, transparent 82%);
+    }
+
+    .demo-window {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 34px;
+      bottom: 34px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: rgba(4,7,10,.72);
+      backdrop-filter: blur(16px);
+    }
+
+    .demo-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .demo-app {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #eefcff;
+      font-weight: 850;
+    }
+
+    .demo-app img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    .demo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 10px;
+      border: 1px solid rgba(84,243,223,.26);
+      border-radius: 999px;
+      color: #c8fff8;
+      background: rgba(84,243,223,.08);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .demo-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--aqua);
+      box-shadow: 0 0 18px rgba(84,243,223,.9);
+      animation: demoPulse 1.4s ease-in-out infinite;
+    }
+
+    .demo-body {
+      position: relative;
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      min-height: 0;
+    }
+
+    .demo-hub {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      padding: 16px 12px;
+      border-right: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.035);
+    }
+
+    .hub-item {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      padding: 0 11px;
+      border-radius: 10px;
+      color: rgba(251,253,255,.62);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .hub-item.active {
+      color: #061014;
+      background: linear-gradient(135deg, var(--aqua), #d6fff9);
+      box-shadow: 0 18px 40px rgba(84,243,223,.14);
+    }
+
+    .demo-document {
+      position: relative;
+      margin: 22px;
+      padding: 24px;
+      border-radius: 16px;
+      background: #f5f8fb;
+      color: #111820;
+      box-shadow: 0 26px 70px rgba(0,0,0,.25);
+    }
+
+    .doc-line {
+      height: 12px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: #dce5ec;
+    }
+
+    .doc-line.short { width: 58%; }
+    .doc-line.mid { width: 76%; }
+
+    .typed-line {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      margin-top: 14px;
+      color: #071013;
+      font-size: 22px;
+      font-weight: 760;
+      line-height: 1.35;
+    }
+
+    .typed-line::before {
+      content: "Bonjour, je prépare le compte rendu de la réunion.";
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      max-width: 100%;
+      animation: typePaste 6.8s steps(56, end) infinite;
+    }
+
+    .typed-line::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      margin-left: 3px;
+      background: #071013;
+      transform: translateY(4px);
+      animation: cursorBlink .75s step-end infinite;
+    }
+
+    .voice-card {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      background: rgba(5,8,11,.86);
+      box-shadow: 0 22px 70px rgba(0,0,0,.34);
+      backdrop-filter: blur(18px);
+    }
+
+    .voice-orb {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #ffffff 0 14%, var(--aqua) 15% 44%, rgba(84,243,223,.18) 45% 100%);
+      box-shadow: 0 0 34px rgba(84,243,223,.42);
+      animation: voiceListen 1.2s ease-in-out infinite;
+    }
+
+    .voice-text {
+      min-width: 0;
+    }
+
+    .voice-text strong {
+      display: block;
+      color: #f3fdff;
+      font-size: 14px;
+    }
+
+    .voice-text span {
+      display: block;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 13px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .paste-badge {
+      padding: 9px 10px;
+      border-radius: 10px;
+      color: #071013;
+      background: linear-gradient(135deg, var(--aqua), #d6fff9);
+      font-size: 12px;
+      font-weight: 860;
+    }
+
+    @keyframes typePaste {
+      0%, 16% { width: 0; }
+      54%, 88% { width: 100%; }
+      100% { width: 0; }
+    }
+
+    @keyframes cursorBlink {
+      50% { opacity: 0; }
+    }
+
+    @keyframes voiceListen {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes demoPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .55; transform: scale(.8); }
+    }
+
     .quote-band {
       padding: 108px 0;
       background:
@@ -724,6 +985,10 @@
         grid-template-columns: 1fr;
       }
 
+      .live-demo {
+        grid-template-columns: 1fr;
+      }
+
       .audience-grid,
       .impact-grid {
         grid-template-columns: 1fr;
@@ -734,6 +999,8 @@
       }
 
       .showcase-visual { min-height: 420px; }
+
+      .demo-stage { min-height: 500px; }
 
       .contact-panel {
         grid-template-columns: 1fr;
@@ -787,6 +1054,63 @@
       .quote-band,
       .final {
         padding: 72px 0;
+      }
+
+      .demo-stage {
+        min-height: 560px;
+        border-radius: 18px;
+      }
+
+      .demo-window {
+        left: 14px;
+        right: 14px;
+        top: 16px;
+        bottom: 96px;
+      }
+
+      .demo-body {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-hub {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+        padding: 10px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+
+      .hub-item {
+        justify-content: center;
+        min-height: 34px;
+        padding: 0 6px;
+        font-size: 11px;
+      }
+
+      .demo-document {
+        margin: 14px;
+        padding: 18px;
+      }
+
+      .typed-line {
+        font-size: 17px;
+      }
+
+      .typed-line::before {
+        white-space: normal;
+        animation: none;
+        width: auto;
+      }
+
+      .voice-card {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+
+      .paste-badge {
+        display: none;
       }
 
       .impact-card,
@@ -906,6 +1230,49 @@
             <div class="flow-item"><b>1</b><div><strong>Je dicte.</strong><span>Le texte arrive sans couper mon rythme.</span></div></div>
             <div class="flow-item"><b>2</b><div><strong>Je demande.</strong><span>Ouvrir, cliquer, valider, passer à la suite.</span></div></div>
             <div class="flow-item"><b>3</b><div><strong>Je continue.</strong><span>Moins de gestes, moins de fatigue.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="demo">
+      <div class="live-demo">
+        <div class="live-demo-copy">
+          <span class="eyebrow">Démo</span>
+          <h2>La voix écrit, puis colle le texte toute seule.</h2>
+          <p>Comme dans Voxirys : le hub reste ouvert, la dictée arrive, puis le texte est inséré dans l'application en cours. Simple, local, sans envoi sur internet.</p>
+        </div>
+        <div class="demo-stage" aria-label="Démonstration Voxirys : dictée et collage automatique">
+          <div class="demo-window">
+            <div class="demo-top">
+              <div class="demo-app">
+                <img src="product_assets/voxirys_launcher.png" alt="">
+                <span>Voxirys Hub</span>
+              </div>
+              <div class="demo-pill">Écoute locale</div>
+            </div>
+            <div class="demo-body">
+              <div class="demo-hub" aria-label="Hub Voxirys">
+                <div class="hub-item active">Dicter</div>
+                <div class="hub-item">Commandes</div>
+                <div class="hub-item">Souris</div>
+                <div class="hub-item">Historique</div>
+              </div>
+              <div class="demo-document" aria-label="Texte collé automatiquement">
+                <div class="doc-line mid"></div>
+                <div class="doc-line"></div>
+                <div class="doc-line short"></div>
+                <div class="typed-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-orb" aria-hidden="true"></div>
+            <div class="voice-text">
+              <strong>Dictée en cours</strong>
+              <span>Le texte se colle automatiquement dans la fenêtre active.</span>
+            </div>
+            <div class="paste-badge">Collé</div>
           </div>
         </div>
       </div>
