@@ -863,6 +863,15 @@
       gap: 12px;
     }
 
+    .hidden-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1238,20 +1247,25 @@
           <h2>Parlez-nous de votre usage.</h2>
           <p>Handicap, enseignement, santé, fatigue, besoin métier : dites-nous ce que Voxirys doit améliorer pour vous.</p>
         </div>
-        <form class="contact-form" action="mailto:voxirys@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="https://formsubmit.co/voxirys@gmail.com" method="post">
+          <input type="hidden" name="_subject" value="Voxirys - Nouveau message">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://voxirys.fr/#contact">
+          <input type="text" name="_honey" class="hidden-field" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <label>Nom
-              <input name="nom" autocomplete="name" placeholder="Votre nom">
+              <input name="Nom" autocomplete="name" placeholder="Votre nom" required>
             </label>
             <label>Email
-              <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr">
+              <input name="Email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required>
             </label>
           </div>
           <label>Message
-            <textarea name="message" placeholder="Votre besoin, votre contexte, votre question"></textarea>
+            <textarea name="Message" placeholder="Votre besoin, votre contexte, votre question" required></textarea>
           </label>
           <button class="btn primary" type="submit">Envoyer</button>
-          <p class="contact-note">Le formulaire ouvre votre logiciel mail. Vous pouvez aussi écrire à voxirys@gmail.com.</p>
+          <p class="contact-note">Le message est envoyé à voxirys@gmail.com.</p>
         </form>
       </div>
     </section>
