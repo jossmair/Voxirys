@@ -523,77 +523,71 @@
       box-shadow: 0 42px 120px rgba(0,0,0,.36);
     }
 
-    .demo-stage::before {
+    .demo-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .92;
+      transform: scale(1.02);
+    }
+
+    .demo-stage::after {
       content: "";
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity: .24;
-      mask-image: linear-gradient(180deg, black, transparent 82%);
+      background:
+        linear-gradient(180deg, rgba(5,8,11,.08), rgba(5,8,11,.2)),
+        linear-gradient(90deg, rgba(5,8,11,.24), transparent 48%);
+      pointer-events: none;
     }
 
-    .demo-window {
+    .instant-overlay {
       position: absolute;
-      left: 30px;
-      right: 30px;
-      top: 34px;
-      bottom: 34px;
+      z-index: 2;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
       display: grid;
-      grid-template-rows: auto minmax(0, 1fr);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 18px;
-      background: rgba(4,7,10,.72);
-      backdrop-filter: blur(16px);
-    }
-
-    .demo-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-
-    .demo-app {
-      display: flex;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      color: #eefcff;
-      font-weight: 850;
     }
 
-    .demo-app img {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
+    .instant-step {
+      min-height: 72px;
+      display: grid;
+      align-content: center;
+      gap: 4px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 14px;
+      background: rgba(5,8,11,.78);
+      box-shadow: 0 16px 42px rgba(0,0,0,.28);
+      backdrop-filter: blur(16px);
+      opacity: .62;
     }
 
-    .demo-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 10px;
-      border: 1px solid rgba(84,243,223,.26);
-      border-radius: 999px;
+    .instant-step strong {
+      color: #f4fdff;
+      font-size: 14px;
+    }
+
+    .instant-step span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .instant-step.done {
+      opacity: 1;
       color: #c8fff8;
       background: rgba(84,243,223,.08);
-      font-size: 12px;
-      font-weight: 800;
+      border-color: rgba(84,243,223,.28);
     }
 
-    .demo-pill::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--aqua);
-      box-shadow: 0 0 18px rgba(84,243,223,.9);
-      animation: demoPulse 1.4s ease-in-out infinite;
+    .instant-step.paste {
+      opacity: 1;
+      animation: pastePop 2.8s ease-in-out infinite;
     }
 
     .demo-body {
@@ -648,38 +642,6 @@
 
     .doc-line.short { width: 58%; }
     .doc-line.mid { width: 76%; }
-
-    .typed-line {
-      position: relative;
-      display: inline-block;
-      max-width: 100%;
-      margin-top: 14px;
-      color: #071013;
-      font-size: 22px;
-      font-weight: 760;
-      line-height: 1.35;
-    }
-
-    .typed-line::before {
-      content: "Bonjour, je prépare le compte rendu de la réunion.";
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      width: 0;
-      max-width: 100%;
-      animation: typePaste 6.8s steps(56, end) infinite;
-    }
-
-    .typed-line::after {
-      content: "";
-      display: inline-block;
-      width: 2px;
-      height: 1.1em;
-      margin-left: 3px;
-      background: #071013;
-      transform: translateY(4px);
-      animation: cursorBlink .75s step-end infinite;
-    }
 
     .voice-card {
       position: absolute;
@@ -736,16 +698,6 @@
       font-weight: 860;
     }
 
-    @keyframes typePaste {
-      0%, 16% { width: 0; }
-      54%, 88% { width: 100%; }
-      100% { width: 0; }
-    }
-
-    @keyframes cursorBlink {
-      50% { opacity: 0; }
-    }
-
     @keyframes voiceListen {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.08); }
@@ -754,6 +706,11 @@
     @keyframes demoPulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: .55; transform: scale(.8); }
+    }
+
+    @keyframes pastePop {
+      0%, 52%, 100% { transform: translateY(0); box-shadow: 0 16px 42px rgba(0,0,0,.28); }
+      62% { transform: translateY(-5px); box-shadow: 0 22px 62px rgba(84,243,223,.2); }
     }
 
     .quote-band {
@@ -1057,60 +1014,25 @@
       }
 
       .demo-stage {
-        min-height: 560px;
+        min-height: 500px;
         border-radius: 18px;
       }
 
-      .demo-window {
-        left: 14px;
-        right: 14px;
-        top: 16px;
-        bottom: 96px;
+      .demo-image {
+        object-position: center;
       }
 
-      .demo-body {
+      .instant-overlay {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
         grid-template-columns: 1fr;
+        gap: 7px;
       }
 
-      .demo-hub {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 6px;
-        padding: 10px;
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.1);
-      }
-
-      .hub-item {
-        justify-content: center;
-        min-height: 34px;
-        padding: 0 6px;
-        font-size: 11px;
-      }
-
-      .demo-document {
-        margin: 14px;
-        padding: 18px;
-      }
-
-      .typed-line {
-        font-size: 17px;
-      }
-
-      .typed-line::before {
-        white-space: normal;
-        animation: none;
-        width: auto;
-      }
-
-      .voice-card {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        grid-template-columns: auto minmax(0, 1fr);
-      }
-
-      .paste-badge {
-        display: none;
+      .instant-step {
+        min-height: 58px;
+        padding: 10px 12px;
       }
 
       .impact-card,
@@ -1239,40 +1161,24 @@
       <div class="live-demo">
         <div class="live-demo-copy">
           <span class="eyebrow">Démo</span>
-          <h2>La voix écrit, puis colle le texte toute seule.</h2>
-          <p>Comme dans Voxirys : le hub reste ouvert, la dictée arrive, puis le texte est inséré dans l'application en cours. Simple, local, sans envoi sur internet.</p>
+          <h2>Voxirys colle le texte d'un coup.</h2>
+          <p>Le hub reste ouvert, la phrase est prête, puis Voxirys l'insère instantanément dans la fenêtre active. Simple, local, sans envoi sur internet.</p>
         </div>
         <div class="demo-stage" aria-label="Démonstration Voxirys : dictée et collage automatique">
-          <div class="demo-window">
-            <div class="demo-top">
-              <div class="demo-app">
-                <img src="product_assets/voxirys_launcher.png" alt="">
-                <span>Voxirys Hub</span>
-              </div>
-              <div class="demo-pill">Écoute locale</div>
+          <img class="demo-image" src="assets/voxirys-instant-paste-demo.png" alt="Voxirys colle un texte dicté dans un document Windows">
+          <div class="instant-overlay" aria-hidden="true">
+            <div class="instant-step done">
+              <strong>Hub ouvert</strong>
+              <span>Voxirys écoute en local.</span>
             </div>
-            <div class="demo-body">
-              <div class="demo-hub" aria-label="Hub Voxirys">
-                <div class="hub-item active">Dicter</div>
-                <div class="hub-item">Commandes</div>
-                <div class="hub-item">Souris</div>
-                <div class="hub-item">Historique</div>
-              </div>
-              <div class="demo-document" aria-label="Texte collé automatiquement">
-                <div class="doc-line mid"></div>
-                <div class="doc-line"></div>
-                <div class="doc-line short"></div>
-                <div class="typed-line"></div>
-              </div>
+            <div class="instant-step done">
+              <strong>Phrase prête</strong>
+              <span>Le texte est complet.</span>
             </div>
-          </div>
-          <div class="voice-card">
-            <div class="voice-orb" aria-hidden="true"></div>
-            <div class="voice-text">
-              <strong>Dictée en cours</strong>
-              <span>Le texte se colle automatiquement dans la fenêtre active.</span>
+            <div class="instant-step paste">
+              <strong>Collé d'un coup</strong>
+              <span>Dans la fenêtre active.</span>
             </div>
-            <div class="paste-badge">Collé</div>
           </div>
         </div>
       </div>
