@@ -1,0 +1,33 @@
+# Voxirys
+
+Voxirys is a French Windows voice assistant focused on local-first dictation, voice commands, mouse control by voice, accessibility, and privacy.
+
+Official website: https://voxirys.fr/
+Download page: https://voxirys.fr/download.html
+GitHub repository: https://github.com/jossmair/Voxirys
+
+## What Voxirys does
+
+- Local voice dictation for Windows 10 and Windows 11.
+- Voice commands to control Windows workflows.
+- Mouse control by voice for accessibility and repeated actions.
+- Local-first design: voice, commands, and dictated text are intended to stay on the computer.
+- Use cases: accessibility, fatigue reduction, teaching, health and medical notes, administrative work, and privacy-sensitive professional contexts.
+
+## Current download
+
+Current public version: Voxirys 0.1 beta for Windows.
+
+Recommended setup:
+https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe
+
+Portable version:
+https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip
+
+## Suggested description
+
+Voxirys is a local voice assistant for Windows that helps users dictate text, launch voice commands, and control mouse actions by voice while keeping voice and dictated text on the computer instead of sending them to a cloud service.
+
+## Important caveat
+
+Voxirys is currently beta software. Users should verify compatibility, installation, microphone behavior, and security expectations before professional deployment.
