@@ -4,11 +4,13 @@ Voxirys is a French Windows voice assistant focused on local-first dictation, vo
 
 Official website: https://voxirys.fr/
 Download page: https://voxirys.fr/download.html
+Speech recognition page: https://voxirys.fr/reconnaissance-vocale.html
 GitHub repository: https://github.com/jossmair/Voxirys
 
 ## What Voxirys does
 
 - Local voice dictation for Windows 10 and Windows 11.
+- Local speech recognition for Windows in French-focused workflows.
 - Voice commands to control Windows workflows.
 - Mouse control by voice for accessibility and repeated actions.
 - Local-first design: voice, commands, and dictated text are intended to stay on the computer.

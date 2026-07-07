@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Télécharger Voxirys gratuitement en bêta pour Windows 10/11 : dictée vocale locale, commandes vocales, souris à la voix et confidentialité sans cloud.">
+  <meta name="description" content="Télécharger Voxirys gratuitement en bêta pour Windows 10/11 : reconnaissance vocale locale, dictée vocale, commandes vocales, souris à la voix et confidentialité sans cloud.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="keywords" content="télécharger Voxirys, dictée vocale Windows, assistant vocal local, commande vocale Windows, souris à la voix, logiciel accessibilité Windows">
   <meta name="theme-color" content="#05070b">
@@ -12,6 +12,8 @@
   <link rel="icon" href="product_assets/voxirys_launcher.ico" sizes="any">
   <link rel="apple-touch-icon" href="product_assets/voxirys_launcher.png">
   <link rel="preload" as="image" href="product_assets/home.png" imagesrcset="product_assets/home.png 820w" imagesizes="(max-width: 940px) 90vw, 820px">
+  <script defer data-domain="voxirys.fr" src="https://plausible.io/js/script.file-downloads.outbound-links.tagged-events.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Voxirys">
@@ -55,7 +57,7 @@
         "@id": "https://voxirys.fr/download.html#webpage",
         "url": "https://voxirys.fr/download.html",
         "name": "Télécharger Voxirys - dictée vocale locale pour Windows",
-        "description": "Télécharger Voxirys gratuitement en bêta pour Windows 10/11 : dictée vocale locale, commandes vocales, souris à la voix et confidentialité sans cloud.",
+        "description": "Télécharger Voxirys gratuitement en bêta pour Windows 10/11 : reconnaissance vocale locale, dictée vocale, commandes vocales, souris à la voix et confidentialité sans cloud.",
         "isPartOf": {
           "@id": "https://voxirys.fr/#website"
         },
@@ -832,6 +834,7 @@
       </a>
       <nav class="nav" aria-label="Navigation">
         <a href="#fonctions">Fonctions</a>
+        <a href="reconnaissance-vocale.html">Reconnaissance vocale</a>
         <a href="#publics">Publics</a>
         <a href="#telecharger">Télécharger</a>
         <a href="#faq">FAQ</a>
@@ -849,8 +852,8 @@
           <h1>Voxirys, <span class="shine">assistant vocal local</span> pour Windows.</h1>
           <p class="lead">Dictez du texte, lancez des commandes et contrôlez la souris à la voix. Vos données restent sur votre ordinateur, sans envoi vocal ou texte vers internet.</p>
           <div class="actions">
-            <a class="btn primary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe">Télécharger Voxirys</a>
-            <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip">Version portable</a>
+            <a class="btn primary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe" data-track-download="Setup">Télécharger Voxirys</a>
+            <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip" data-track-download="Portable">Version portable</a>
           </div>
 
           <p class="micro">Version bêta 0.1 — Windows 10/11 — setup Windows recommandé.</p>
@@ -938,8 +941,8 @@
             <h2>Télécharger la bêta Windows.</h2>
             <p>Voxirys est actuellement proposé en version bêta 0.1. Le logiciel s'exécute localement sur Windows : vos commandes, votre voix et vos textes dictés restent sur votre machine.</p>
             <div class="actions">
-              <a class="btn primary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe">Télécharger Voxirys</a>
-              <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip">Version portable</a>
+              <a class="btn primary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe" data-track-download="Setup">Télécharger Voxirys</a>
+              <a class="btn secondary" href="https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip" data-track-download="Portable">Version portable</a>
               <a class="btn secondary" href="#contact">Contacter Voxirys</a>
             </div>
             <div class="download-note">
@@ -1030,9 +1033,20 @@
   <footer>
     <div class="shell">
       <p>Voxirys — Assistant vocal local et sécurisé pour Windows.</p>
-      <p>© 2026 Voxirys.</p>
+      <p><a href="reconnaissance-vocale.html">Reconnaissance vocale Windows</a> · <a href="https://github.com/jossmair/Voxirys">GitHub</a> · © 2026 Voxirys.</p>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll("[data-track-download]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.plausible) {
+          window.plausible("Download " + link.dataset.trackDownload, {
+            props: { file: link.dataset.trackDownload }
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
