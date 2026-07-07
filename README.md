@@ -1,58 +1,61 @@
 # Voxirys
 
-Assistant vocal local pour Windows : dicter du texte, lancer des commandes vocales et garder les donnees sur l'ordinateur.
+Assistant vocal local pour Windows : dictee vocale, commandes Windows a la voix, souris vocale et aide d'accessibilite, avec un objectif simple : garder la voix et les textes dictes sur l'ordinateur.
 
-Site officiel : https://voxirys.fr
+[Site officiel](https://voxirys.fr/) | [Telecharger Voxirys](https://voxirys.fr/download.html) | [Notes de version](docs/RELEASE_NOTES.md)
 
-## Telechargement
+![Interface de Voxirys](assets/voxirys-home.png)
 
-- Setup Windows : https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe
+## Telechargement Windows
+
+Version actuelle : `0.1 beta` pour Windows 10/11.
+
+- Setup recommande : https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Setup-0.1-beta-20260606_143947.exe
 - Version portable : https://github.com/jossmair/Voxirys/raw/main/telechargements/Voxirys-Portable-0.1.zip
+- Empreintes SHA-256 : [CHECKSUMS.txt](CHECKSUMS.txt)
 
-Voxirys est en beta. Le setup et l'archive portable peuvent etre volumineux car ils embarquent les elements necessaires au fonctionnement local.
+Le setup et l'archive portable sont volumineux, car Voxirys embarque les elements necessaires au fonctionnement local.
 
-## Ce que fait Voxirys
+## Pourquoi Voxirys
 
-- Dictee vocale locale
-- Commandes vocales pour piloter Windows
-- Aides d'accessibilite
-- Profils de dictee
-- Historique et dictionnaires
-- Fonctionnement CPU fiable quand CUDA n'est pas disponible
+Voxirys vise les personnes qui veulent utiliser la voix pour ecrire ou piloter Windows sans dependre d'un service cloud obligatoire.
 
-## Confidentialite
+- Dicter du texte dans les outils du quotidien.
+- Lancer des commandes vocales simples.
+- Utiliser la souris a la voix pour cliquer et interagir.
+- Reduire la fatigue clavier-souris.
+- Tester une approche locale pour des contextes sensibles : accessibilite, enseignement, sante, travail administratif.
 
-Voxirys vise un usage local : voix, texte dicte et commandes restent sur la machine. Le site rappelle clairement qu'aucune donnee n'est envoyee sur internet pour la dictee locale.
+## Confidentialite locale
 
-## Public vise
+Voxirys est concu pour privilegier un fonctionnement local : voix, commandes et textes dictes restent sur la machine. L'objectif est de limiter l'exposition de donnees personnelles, professionnelles ou medicales.
 
-- Personnes ayant besoin de plus d'autonomie devant l'ordinateur
-- Enseignants
-- Professionnels de sante
-- Utilisateurs fatigues par le clavier, la souris ou les gestes repetes
+Voir aussi : [docs/CONFIDENTIALITE.md](docs/CONFIDENTIALITE.md)
 
-## Demarrage rapide depuis les sources
+## Demarrage rapide
 
-1. Installer les dependances Python du projet.
-2. Lancer `Voxirys.py`.
-3. Verifier le micro dans l'application.
-4. Choisir un profil.
-5. Utiliser `Dictee` pour ecrire ou `Commande` pour agir.
+1. Telechargez le setup Windows.
+2. Lancez l'installation.
+3. Ouvrez Voxirys.
+4. Verifiez le micro.
+5. Utilisez le mode `Dictee` pour ecrire ou le mode `Commande` pour agir.
 
-Raccourci courant : `Maj gauche` pour lancer ou arreter l'ecoute.
+Guide : [docs/INSTALLATION.md](docs/INSTALLATION.md)
 
-## Documentation utile
+## Etat du projet
 
-- Guide utilisateur : `docs/USER_GUIDE.md`
-- Documentation complete : `docs/DOCUMENTATION.md`
-- Premier test vocal : `docs/FIRST_RUN_DEMO.md`
-- Compatibilite Windows : `docs/WINDOWS_COMPATIBILITY_REPORT.md`
-- Signature Windows : `docs/AUTHENTICODE_SIGNING.md`
-- Licences tierces : `docs/THIRD_PARTY_LICENSES.md`
+Voxirys est en beta. Les retours utiles sont les bienvenus : installation, micro, performance, reconnaissance vocale, accessibilite, ergonomie et cas metier.
 
-## Qualite
+Pour aider le projet a sortir de l'invisibilite :
 
-Commandes de validation utilisees dans le projet :
+- telechargez la beta depuis le site officiel ;
+- ajoutez une etoile au depot si le projet vous interesse ;
+- partagez le lien https://voxirys.fr/ avec les personnes qui cherchent une dictee vocale locale pour Windows ;
+- ouvrez une issue avec votre contexte d'usage.
+
+## Validation
+
+Commandes de validation utilisees pendant le developpement :
 
 ```bash
 pytest -q
@@ -60,10 +63,4 @@ python tools/run_quality_audits.py --root . --strict
 python Voxirys.py --self-test
 ```
 
-Avant une release publique Windows, le setup doit etre signe proprement et valide sur machine propre.
-
-## Etat
-
-Version actuelle : beta Windows.
-
-Le site public et les videos de demonstration sont publies sur `voxirys.fr`.
+Avant une release publique plus large, le setup Windows doit etre signe proprement et valide sur machine propre.
